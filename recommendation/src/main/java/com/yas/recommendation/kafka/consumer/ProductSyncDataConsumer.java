@@ -33,7 +33,7 @@ public class ProductSyncDataConsumer extends BaseCdcConsumer<ProductMsgKey, Prod
         topics = "${product.topic.name}",
         containerFactory = PRODUCT_CDC_LISTENER_CONTAINER_FACTORY
     )
-//    @RetrySupportDql(listenerContainerFactory = PRODUCT_CDC_LISTENER_CONTAINER_FACTORY)
+    @RetrySupportDql(listenerContainerFactory = PRODUCT_CDC_LISTENER_CONTAINER_FACTORY)
     public void processMessage(
         @Header(KafkaHeaders.RECEIVED_KEY) ProductMsgKey key,
         @Payload(required = false) @Valid ProductCdcMessage productCdcMessage,
