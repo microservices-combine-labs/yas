@@ -45,6 +45,7 @@ services:
 
 networks:
   yas-network:
+    external: true
 
 volumes:
   esdata:

@@ -94,6 +94,13 @@ https://github.com/nashtech-garage/yas/tree/main/k8s/deploy
 
 By contributing, you agree that your contributions will be licensed under MIT License. 
 
+## Run one service
+- mvn -U -pl recommendation -am clean install -Dmaven.test.skip=true
+## ThanhNV 
+SPRING_AI_AZURE_OPENAI_API_KEY=sk-TBL-524VUep7KH_9yp3Irw
+SPRING_AI_AZURE_OPENAI_ENDPOINT=https://aiportalapi.stu-platform.live/jpe
+SPRING_AI_AZURE_OPENAI_EMBEDDING_OPTIONS_MODEL=text-embedding-3-small
+
 ## Screenshots
 
 <table>

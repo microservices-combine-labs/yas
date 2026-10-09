@@ -5,6 +5,7 @@ import org.springframework.boot.kafka.autoconfigure.KafkaProperties;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.listener.ContainerProperties;
 import org.springframework.kafka.support.serializer.ErrorHandlingDeserializer;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
@@ -42,6 +43,7 @@ public abstract class BaseKafkaListenerConfig<K, V> {
     public ConcurrentKafkaListenerContainerFactory<K, V> kafkaListenerContainerFactory() {
         var factory = new ConcurrentKafkaListenerContainerFactory<K, V>();
         factory.setConsumerFactory(typeConsumerFactory(keyType, valueType));
+        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
         return factory;
     }
 

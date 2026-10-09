@@ -113,5 +113,5 @@ services:
       - yas-network
 networks:
   yas-network:
-    name: yas-network
+#    name: yas-network
     external: true
